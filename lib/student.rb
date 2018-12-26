@@ -19,8 +19,6 @@ class Student
     DB[:conn].execute(sql) 
   end
   
-    
-
   def self.drop_table
     sql = "DROP TABLE IF EXISTS students"
 
@@ -38,6 +36,7 @@ class Student
   
   def self.create(name:, grade:) 
     self.new(name, grade).save
+    self
     
   end
   # Remember, you can access your database connection anywhere in this class
